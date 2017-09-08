@@ -1,11 +1,11 @@
-### node_google_oauth_bp
+# node_google_oauth_bp
 
 ## Running app
 npm run dev
 
-##Setup
+## Setup
 
-# Getting google oauth keys
+### Getting google oauth keys
 
 Instructions can be found at:
 General: https://www.udemy.com/node-with-react-fullstack-web-development/learn/v4/t/lecture/7593710?start=0
