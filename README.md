@@ -1,5 +1,7 @@
 # node_google_oauth_bp
 
+db found at mlab.com
+
 ## Running app
 npm run dev
 
