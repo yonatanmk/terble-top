@@ -1,2 +1,8 @@
-node_modules
+# dependencies
+/node_modules
+
+# config vars
 config/dev.js
+
+# misc
+.DS_Store
