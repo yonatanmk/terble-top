@@ -41,7 +41,18 @@ class Header extends Component {
 
   render() {
     return (
-      <div>Header</div>
+      <nav >
+        <div>
+          <a className="left brand-logo">
+            Emaily
+          </a>
+          <ul className="right">
+            <li>
+              <a>Login With Google</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 }
