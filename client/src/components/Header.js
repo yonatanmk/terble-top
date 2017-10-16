@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 // import Payments from './Payments';
 
 class Header extends Component {
-  // renderContent() {
-  //   switch (this.props.auth) {
-  //     case null:
-  //       return;
-  //     case false:
-  //       return <li><a href="/auth/google">Login With Google</a></li>;
-  //     default:
-  //       return [
-  //         <li key="1"><Payments /></li>,
-  //         <li key="3" style={{ margin: '0 10px' }}>
-  //           Credits: {this.props.auth.credits}
-  //         </li>,
-  //         <li key="2"><a href="/api/logout">Logout</a></li>
-  //       ];
-  //   }
-  // }
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return <li><a href="/auth/google">Login With Google</a></li>;
+      default:
+        return <li><a href="">Logout</a></li>;
+        // return [
+        //   <li key="1"><Payments /></li>,
+        //   <li key="3" style={{ margin: '0 10px' }}>
+        //     Credits: {this.props.auth.credits}
+        //   </li>,
+        //   <li key="2"><a href="/api/logout">Logout</a></li>
+        // ];
+    }
+  }
 
   // render() {
   //   return (
@@ -40,6 +41,7 @@ class Header extends Component {
   // }
 
   render() {
+    console.log(this.props)
     return (
       <nav >
         <div>
@@ -47,9 +49,7 @@ class Header extends Component {
             Emaily
           </a>
           <ul className="right">
-            <li>
-              <a>Login With Google</a>
-            </li>
+            {this.renderContent()}
           </ul>
         </div>
       </nav>
@@ -57,9 +57,8 @@ class Header extends Component {
   }
 }
 
-// function mapStateToProps({ auth }) {
-//   return { auth };
-// }
+function mapStateToProps({ auth }) {
+  return { auth };
+}
 
-// export default connect(mapStateToProps)(Header);
-export default Header;
+export default connect(mapStateToProps)(Header);
