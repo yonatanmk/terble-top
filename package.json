@@ -12,7 +12,7 @@
 		"server": "nodemon index.js",
 		"client": "npm run start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"lint": "eslint ./*"
+		"lint": "eslint ."
 	},
 	"author": "",
 	"license": "ISC",
