@@ -15,6 +15,5 @@
     "react/prop-types": "off",
     "consistent-return": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/href-no-hash": "off"
   }
 }
