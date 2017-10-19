@@ -1,0 +1,5 @@
+node_modules
+*.md
+*.json
+src/registerServiceWorker.js
+yarn.lock

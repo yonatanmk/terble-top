@@ -1,4 +1,5 @@
 // Data Layer control (e.g. Redux)
+/* eslint-disable no-undef */
 
 import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
@@ -18,5 +19,5 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,
-  document.querySelector('#root')
+  document.querySelector('#root'),
 );

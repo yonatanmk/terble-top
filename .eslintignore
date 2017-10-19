@@ -1,0 +1,6 @@
+node_modules
+.gitignore
+*.md
+*.json
+config/keys.js
+client/src/registerServiceWorker.js
