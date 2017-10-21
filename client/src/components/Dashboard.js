@@ -17,11 +17,6 @@ class Dashboard extends Component {
 		this.onPlayerNumberChange = this.onPlayerNumberChange.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	const { fetchGames } = this.props;
-	// 	fetchGames();
-	// }
-
 	componentDidUpdate() {
 		const { fetchGames, user, games } = this.props;
 		if (user && user.bbgUsername && games.length === 0) {
@@ -54,7 +49,7 @@ class Dashboard extends Component {
 
 	checkPlayerNumber(game) {
 		const { playerNumber } = this.state;
-		return !!Number(playerNumber) && game.minPlayers <= Number(playerNumber) && game.maxPlayers >= Number(playerNumber);
+		return playerNumber === 'all' || (!!Number(playerNumber) && game.minPlayers <= Number(playerNumber) && game.maxPlayers >= Number(playerNumber));
 	}
 
 	render() {
