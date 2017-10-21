@@ -15,5 +15,7 @@
     "react/prop-types": "off",
     "consistent-return": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off"
   }
 }

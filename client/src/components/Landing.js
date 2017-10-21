@@ -5,7 +5,7 @@ const Landing = () => (
     <h1>
         TerbleTop!
     </h1>
-      Find Boardgames
+      Find Boardgames For Your Group
   </div>
 );
 
