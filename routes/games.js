@@ -1,9 +1,10 @@
 const rp = require('request-promise');
 
 module.exports = app => {
-	app.get('/api/games', (req, res) => {
+	app.post('/api/games', (req, res) => {
+		console.log(`https://bgg-json.azurewebsites.net/collection/${req.body.bbgUsername}`)
 		const options = {
-			uri: 'https://bgg-json.azurewebsites.net/collection/yonatanmk',
+			uri: `https://bgg-json.azurewebsites.net/collection/${req.body.bbgUsername}`,
 			json: true,
 		};
 

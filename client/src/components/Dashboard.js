@@ -17,9 +17,16 @@ class Dashboard extends Component {
 		this.onPlayerNumberChange = this.onPlayerNumberChange.bind(this);
 	}
 
-	componentDidMount() {
-		const { fetchGames } = this.props;
-		fetchGames();
+	// componentDidMount() {
+	// 	const { fetchGames } = this.props;
+	// 	fetchGames();
+	// }
+
+	componentDidUpdate() {
+		const { fetchGames, user, games } = this.props;
+		if (user && user.bbgUsername && games.length === 0) {
+			fetchGames(user.bbgUsername);
+		}
 	}
 
 	onPlayerNumberChange(playerNumber) {

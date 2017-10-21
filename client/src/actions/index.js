@@ -7,14 +7,14 @@ export const fetchUser = () => dispatch => {
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }));
 };
 
-export const fetchGames = () => dispatch => {
+export const fetchGames = bbgUsername => dispatch => {
   axios
-    .get('/api/games')
+    .post('/api/games', { bbgUsername })
     .then(res => dispatch({ type: FETCH_GAMES, payload: res.data }));
 };
 
-export const createBBGUsername = username => dispatch => {
+export const createBBGUsername = bbgUsername => dispatch => {
   axios
-    .post('/api/add-bbg-username', { username })
+    .post('/api/add-bbg-username', { bbgUsername })
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }));
 };

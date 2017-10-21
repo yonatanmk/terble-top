@@ -5,9 +5,7 @@ const User = mongoose.model('users'); // Dont import models, access them like th
 module.exports = app => {
 	app.post('/api/add-bbg-username', (req, res) => {
      const { _id } = req.user;
-     console.log(`the id is ${_id}`);
-     console.log(req.body.username);
-     User.findByIdAndUpdate({ _id }, { bbgUsername: req.body.username })
+     User.findByIdAndUpdate({ _id }, { bbgUsername: req.body.bbgUsername })
       .then(() => User.findById({ _id }))
       .then(user => res.send(user))
       .catch(error => console.log(error));
