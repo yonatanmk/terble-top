@@ -2,11 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 require('./models/user');
 require('./services/passport');
 const keys = require('./config/keys');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 const gamesRoutes = require('./routes/games');
 
 mongoose.connect(keys.mongoURI);
@@ -22,8 +24,10 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.json());
 
 authRoutes(app);
+userRoutes(app);
 gamesRoutes(app);
 
 if (process.env.NODE_ENV === 'production') {

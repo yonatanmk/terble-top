@@ -12,3 +12,9 @@ export const fetchGames = () => dispatch => {
     .get('/api/games')
     .then(res => dispatch({ type: FETCH_GAMES, payload: res.data }));
 };
+
+export const createBBGUsername = username => dispatch => {
+  axios
+    .post('/api/add-bbg-username', { username })
+    .then(res => dispatch({ type: FETCH_USER, payload: res.data }));
+};

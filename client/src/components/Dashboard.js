@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 import * as actions from '../actions';
 
 import Game from './Game';
@@ -10,17 +11,29 @@ class Dashboard extends Component {
 
 		this.state = {
 			playerNumber: '',
+			bbgUsername: '',
 		};
 
 		this.onPlayerNumberChange = this.onPlayerNumberChange.bind(this);
 	}
 
 	componentDidMount() {
-		this.props.fetchGames();
+		const { fetchGames } = this.props;
+		fetchGames();
 	}
 
 	onPlayerNumberChange(playerNumber) {
 		this.setState({ playerNumber });
+	}
+
+	onBBGUsernameChange(bbgUsername) {
+		this.setState({ bbgUsername });
+	}
+
+	onModalSubmit() {
+		if (this.state.bbgUsername.length > 0) {
+			this.props.createBBGUsername(this.state.bbgUsername);
+		}
 	}
 
 	gamesList() {
@@ -38,13 +51,27 @@ class Dashboard extends Component {
 	}
 
 	render() {
-		console.log(this.props.games);
+		const { user } = this.props;
 		return (
 			<div>
+			<Modal
+				isOpen={!user || !user.bbgUsername}
+				contentLabel="Modal"
+			>
+				<h1>Please enter your BoardGameGeek username</h1>
 				<form style={{ marginTop: 10 }}>
 					<input
 						type="text"
-						name="firstname"
+						placeholder="Username"
+						value={this.state.bbgUsername}
+						onChange={e => this.onBBGUsernameChange(e.target.value)}
+					/>
+					<button value="Submit" onClick={() => this.onModalSubmit()}>Submit</button>
+				</form>
+			</Modal>
+				<form style={{ marginTop: 10 }}>
+					<input
+						type="text"
 						placeholder="Number of players"
 						value={this.state.playerNumber}
 						onChange={e => this.onPlayerNumberChange(e.target.value)}
@@ -56,8 +83,8 @@ class Dashboard extends Component {
 	}
 }
 
-function mapStateToProps({ games }) {
-	return { games };
+function mapStateToProps({ user, games }) {
+	return { user, games };
 }
 
 export default connect(mapStateToProps, actions)(Dashboard);
