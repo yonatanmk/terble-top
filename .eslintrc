@@ -17,6 +17,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "global-require": "off",
     "react/jsx-indent": "off",
-    "react/jsx-indent-props": "off"
+    "react/jsx-indent-props": "off",
+    "react/jsx-boolean-value": "off"
   }
 }
