@@ -1,0 +1,104 @@
+{
+  "boardgames": {
+    "termsofuse":"https://boardgamegeek.com/xmlapi/termsofuse",
+    "boardgame": {
+      "objectid" : "230802",
+      "yearpublished":"2017",
+      "minplayers":"2",
+      "maxplayers":"4",
+      "playingtime":"45",
+      "minplaytime":"30",
+      "maxplaytime":"45",
+      "age":"8",
+      "name":[
+        {
+          "primary":"true",
+          "sortindex":"1",
+          "$t":"Azul"
+        },
+        {
+          "sortindex":"1",
+          "$t":"アズール"
+        },
+        {"sortindex":"1","$t":"花磚物語"}
+      ],
+      "description":"Introduced by the Moors, azulejos (originally white and blue ceramic tiles) were fully embraced by the Portuguese when their king Manuel I, on a visit to the Alhambra palace in Southern Spain, was mesmerized by the stunning beauty of the Moorish decorative tiles. The king, awestruck by the interior beauty of the Alhambra, immediately ordered that his own palace in Portugal be decorated with similar wall tiles. As a tile-laying artist, you have been challenged to embellish the walls of the Royal Palace of Evora. In the game Azul, players take turns drafting colored tiles from suppliers to their player board. Later in the round, players score points based on how they've placed their tiles to decorate the palace. Extra points are scored for specific patterns and completing sets; wasted supplies harm the player's score. The player with the most points at the end of the game wins.",
+      "thumbnail":"https://cf.geekdo-images.com/thumb/img/_ed_JktpgFwTr2WjEQgYMzHBvOQ=/fit-in/200x150/pic3718275.jpg",
+      "image":"https://cf.geekdo-images.com/original/img/9-SR48jyfxs4At6255sjHoly2sw=/0x0/pic3718275.jpg",
+      "boardgamepublisher":[
+        {"objectid":"38363","$t":"Next Move Games"},
+        {"objectid":"34188","$t":"Plan B Games"},
+        {"objectid":"157","$t":"Asmodee"},
+        {"objectid":"9068","$t":"Broadway Toys LTD"},
+        {"objectid":"4785","$t":"Ghenos Games"},
+        {"objectid":"1391","$t":"Hobby Japan"},
+        {"objectid":"5812","$t":"Lacerta"},
+        {"objectid":"1466","$t":"Zvezda"}
+      ],
+      "boardgamepodcastepisode":[
+        {"objectid":"213551","$t":"#57: FBGL 2017, The Networks Executives, Indulgence on tap, Magic Maze and The State of the Podcast"},
+        {"objectid":"225520","$t":"43. DDP The best Games of 2017 (In our opinion)"},
+        {"objectid":"223088","$t":"BGP 017: 2017 Holiday Buying Guide"},
+        {"objectid":"223701","$t":"BGP 018: Top 10 Board Games of 2017"},
+        {"objectid":"228039","$t":"Ep 4 - Azul Review and Getting Peeved"},
+        {"objectid":"223298","$t":"Episode 112- Whistle Stop with Rolling Dice & Taking Names"},
+        {"objectid":"232441","$t":"Episode 19: We're Back!...At the saloon bantering."},
+        {"objectid":"228297","$t":"Episode 22 - New Games Delivered & Host Autobiographies"},
+        {"objectid":"222831","$t":"Episode 223"},
+        {"objectid":"224748","$t":"Episode 24: Azul, Twilight Imperium: Fourth Edition, Favelas, Galaxy Trucker, Spirit Island"},
+        {"objectid":"227699","$t":"Episode 44 - The 2017 Blitzies"},{"objectid":"218621","$t":"Episode 53 - Evan Derrick Interview"},
+        {"objectid":"230157","$t":"Episode 67 - Munchkin CCG and Friends"},{"objectid":"224751","$t":"Gamers, Grenades, and Grottos – Ep. 3"},
+        {"objectid":"227778","$t":"I Swear I’m a Word Genius – Ep. 4"},{"objectid":"220688","$t":"JTRPodcast 026 – Top 10 Games from Essen 2017"},
+        {"objectid":"227605","$t":"MN 0199 Tichu, Exodus Fleet, Azul, Oh My!"},{"objectid":"214956","$t":"RDTN Episode 129: London, Azul, Flying Squirrels, and Rambling"},{"objectid":"227219","$t":"TGT 073: Analysis Paralysis"},{"objectid":"221009","$t":"The Game Pit Podcast - Episode 103: Picking Over the Bones of Spiel 2017"},{"objectid":"219591","$t":"The Game Pit Podcast - Episode 99: Spiel 2017 Treasure Hunt Part 4"},
+        {"objectid":"222745","$t":"Vox Republica 156: BGG Recap & Game Gifts For Non-Gamers"}
+      ],
+      "boardgamehonor":[
+        {"objectid":"46983","$t":"2017 Cardboard Republic Architect Laurel Nominee"},
+        {"objectid":"47451","$t":"2017 Golden Geek Best Board Game Artwork & Presentation Nominee"},
+        {"objectid":"47468","$t":"2017 Golden Geek Best Family Board Game Nominee"},
+        {"objectid":"47424","$t":"2017 Golden Geek Best Family Board Game Winner"},
+        {"objectid":"47472","$t":"2017 Golden Geek Best Strategy Board Game Nominee"},
+        {"objectid":"47432","$t":"2017 Golden Geek Board Game of the Year Nominee"},
+        {"objectid":"47482","$t":"2017 Golden Geek Most Innovative Board Game Nominee"},
+        {"objectid":"47070","$t":"2018 As d'Or - Jeu de l'Année Nominee"},
+        {"objectid":"47067","$t":"2018 As d'Or - Jeu de l'Année Winner"}
+      ],
+      "boardgamesubdomain":[{"objectid":"4666","$t":"Abstract Games"},{"objectid":"5499","$t":"Family Games"}],
+      "boardgamecategory":{"objectid":"1009","$t":"Abstract Strategy"},
+      "boardgameexpansion":{"objectid":"235739","$t":"Azul: Joker Tiles"},
+      "boardgameversion":[
+        {"objectid":"395362","$t":"Chinese edition"},
+        {"objectid":"385808","$t":"Dutch/French edition"},
+        {"objectid":"361011","$t":"English-only first edition"},
+        {"objectid":"399165","$t":"English-only second edition"},
+        {"objectid":"389764","$t":"English/French edition"},
+        {"objectid":"386433","$t":"French-only edition"},{"objectid":"369734","$t":"German first edition"},
+        {"objectid":"399023","$t":"German second edition"},{"objectid":"397236","$t":"Italian edition"},{"objectid":"391554","$t":"Japanese edition"},
+        {"objectid":"378114","$t":"Polish edition"},{"objectid":"378408","$t":"Russian edition"},{"objectid":"391592","$t":"Spanish edition"}
+      ],
+      "boardgamefamily":{"objectid":"5614","$t":"Country: Portugal"},
+      "boardgameartist":[{"objectid":"74074","$t":"Philippe Guérin"},{"objectid":"14057","$t":"Chris Quilliams"}],
+      "boardgamedesigner":{"objectid":"42","$t":"Michael Kiesling"},
+      "boardgamemechanic":[{"objectid":"2048","$t":"Pattern Building"},{"objectid":"2004","$t":"Set Collection"},{"objectid":"2002","$t":"Tile Placement"}],
+      "poll":[
+        {
+          "name":"suggested_numplayers",
+          "title":"User Suggested Number of Players",
+          "totalvotes":"123",
+          "results":[
+            {
+              "numplayers":"1",
+              "result":[
+                {"value":"Best",
+                  "numvotes":"0"
+                },
+                {
+                  "value":"Recommended",
+                  "numvotes":"0"
+                },
+                {
+                  "value":"Not Recommended",
+                  "numvotes":"65"
+                }
+              ]
+                    },{"numplayers":"2","result":[{"value":"Best","numvotes":"68"},{"value":"Recommended","numvotes":"39"},{"value":"Not Recommended","numvotes":"1"}]},{"numplayers":"3","result":[{"value":"Best","numvotes":"45"},{"value":"Recommended","numvotes":"58"},{"value":"Not Recommended","numvotes":"1"}]},{"numplayers":"4","result":[{"value":"Best","numvotes":"24"},{"value":"Recommended","numvotes":"64"},{"value":"Not Recommended","numvotes":"14"}]},{"numplayers":"4+","result":[{"value":"Best","numvotes":"0"},{"value":"Recommended","numvotes":"0"},{"value":"Not Recommended","numvotes":"52"}]}]},{"name":"language_dependence","title":"Language Dependence","totalvotes":"14","results":{"result":[{"level":"1","value":"No necessary in-game text","numvotes":"14"},{"level":"2","value":"Some necessary text - easily memorized or small crib sheet","numvotes":"0"},{"level":"3","value":"Moderate in-game text - needs crib sheet or paste ups","numvotes":"0"},{"level":"4","value":"Extensive use of text - massive conversion needed to be playable","numvotes":"0"},{"level":"5","value":"Unplayable in another language","numvotes":"0"}]}},{"name":"suggested_playerage","title":"User Suggested Player Age","totalvotes":"19","results":{"result":[{"value":"2","numvotes":"0"},{"value":"3","numvotes":"0"},{"value":"4","numvotes":"0"},{"value":"5","numvotes":"0"},{"value":"6","numvotes":"3"},{"value":"8","numvotes":"12"},{"value":"10","numvotes":"4"},{"value":"12","numvotes":"0"},{"value":"14","numvotes":"0"},{"value":"16","numvotes":"0"},{"value":"18","numvotes":"0"},{"value":"21 and up","numvotes":"0"}]}}],"statistics":{"page":"1","ratings":{"usersrated":"6793","average":"7.99615","bayesaverage":"7.60265","ranks":{"rank":[{"type":"subtype","id":"1","name":"boardgame","friendlyname":"Board Game Rank","value":"61","bayesaverage":"7.60265"},{"type":"family","id":"4666","name":"abstracts","friendlyname":"Abstract Game Rank","value":"1","bayesaverage":"7.68412"},{"type":"family","id":"5499","name":"familygames","friendlyname":"Family Game Rank","value":"2","bayesaverage":"7.68705"}]},"stddev":"1.10616","median":"0","owned":"9208","trading":"19","wanting":"1142","wishing":"5248","numcomments":"1199","numweights":"156","averageweight":"1.8782"}}}}}

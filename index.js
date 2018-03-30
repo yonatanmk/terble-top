@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 require('./models/user');
+require('./models/game');
 require('./services/passport');
 const keys = require('./config/keys');
 const authRoutes = require('./routes/auth');
