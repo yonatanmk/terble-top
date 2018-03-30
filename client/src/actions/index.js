@@ -7,9 +7,9 @@ export const fetchUser = () => dispatch => {
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }));
 };
 
-export const fetchGames = bbgUsername => dispatch => {
+export const fetchGames = () => dispatch => {
   axios
-    .post('/api/games', { bbgUsername })
+    .get('/api/games')
     .then(res => dispatch({ type: FETCH_GAMES, payload: res.data }));
 };
 

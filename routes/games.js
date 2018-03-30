@@ -4,10 +4,10 @@ const parser = require('xml2json');
 const { getBestPlayerNumber } = require('../lib/bbg-api-parse');
 
 module.exports = app => {
-	app.post('/api/games', (req, res) => {
-		console.log(`https://bgg-json.azurewebsites.net/collection/${req.body.bbgUsername}`);
+	app.get('/api/games', (req, res) => {
+		console.log(`Fetching games from https://bgg-json.azurewebsites.net/collection/${req.user.bbgUsername}`);
 		const options = {
-			uri: `https://bgg-json.azurewebsites.net/collection/${req.body.bbgUsername}`,
+			uri: `https://bgg-json.azurewebsites.net/collection/${req.user.bbgUsername}`,
 			json: true,
 		};
 
@@ -20,20 +20,20 @@ module.exports = app => {
 			});
 	});
 
-	app.get('/api/games', (req, res) => {
-		const options = {
-			uri: `https://bgg-json.azurewebsites.net/collection/yonatanmk`,
-			json: true,
-		};
-
-		rp(options)
-			.then(body => {
-				res.send(body);
-			})
-			.catch(err => {
-				console.log(err);
-			});
-	});
+	// app.get('/api/games', (req, res) => {
+	// 	const options = {
+	// 		uri: `https://bgg-json.azurewebsites.net/collection/yonatanmk`,
+	// 		json: true,
+	// 	};
+	//
+	// 	rp(options)
+	// 		.then(body => {
+	// 			res.send(body);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log(err);
+	// 		});
+	// });
 
 	app.get('/bbgxml', (req, res) => {
 		const options = {

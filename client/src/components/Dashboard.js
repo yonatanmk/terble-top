@@ -20,7 +20,7 @@ class Dashboard extends Component {
 	componentDidUpdate() {
 		const { fetchGames, user, games } = this.props;
 		if (user && user.bbgUsername && games.length === 0) {
-			fetchGames(user.bbgUsername);
+			fetchGames();
 		}
 	}
 
