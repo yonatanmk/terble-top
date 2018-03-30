@@ -12,7 +12,7 @@ module.exports = app => {
 	app.post('/api/add-bbg-username', (req, res) => {
     const { _id } = req.user;
     User.findByIdAndUpdate({ _id }, { bbgUsername: req.body.bbgUsername })
-    	.then(() => User.findById({ _id }))
+			.then(() => User.findById({ _id }))
       .then(user => res.send(user))
       .catch(error => console.log(error));
 
@@ -26,8 +26,15 @@ module.exports = app => {
 				body.forEach(bbgGame => {
 					Game.findOne({ _id: bbgGame.gameId })
 						.then(dbGame => {
-							if (!dbGame) {
-								const { gameId, name, image, maxPlayers, minPlayers, averageRating } = bbgGame;
+							if (shouldUpdateGame(dbGame, bbgGame)) {
+								const {
+									gameId,
+									name,
+									image,
+									maxPlayers,
+									minPlayers,
+									averageRating,
+								} = bbgGame;
 								const rating = roundRating(averageRating);
 								const game = {
 									_id: gameId,
@@ -36,25 +43,24 @@ module.exports = app => {
 									maxPlayers,
 									minPlayers,
 									rating,
-								}
+								};
 								rp(`https://www.boardgamegeek.com/xmlapi/boardgame/${gameId}?&stats=1`)
-									.then(body => {
-										const json = JSON.parse(parser.toJson(body));
+									.then(_body => {
+										const json = JSON.parse(parser.toJson(_body));
 										game.bestPlayers = getBestPlayerNumber(json);
 										(new Game(game)).save();
 									})
-									.catch( err => {
+									.catch(err => {
 										console.log('Error Fetching Rating');
-										console.log(err)
+										console.log(err);
 										(new Game(game)).save();
 									});
 							}
-						})
-				})
+						});
+				});
 			})
 			.catch(err => {
 				console.log(err);
 			});
-
 	});
 };
