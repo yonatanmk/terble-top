@@ -1,32 +1,10 @@
-# node_google_oauth_bp
+# Terble-Top
 
-db found at mlab.com
+A small web app for helping you determine what boardgame to play in your group. After logging in with Google OAuth you will be prompted to provide your boardgamegeek username. The app will then fetch all of your boardgames from your BBG profile. You can then enter the size of your group and the site will list all of the boardgames in your possession that can be played with that number of players.
 
-## Running app
+Website can be found at http://terbletop.herokuapp.com/
+
+database hosted at mlab.com
+
+## Running app in development
 npm run dev
-
-## Setup
-
-### Getting google oauth keys
-
-Instructions can be found at:
-General: https://www.udemy.com/node-with-react-fullstack-web-development/learn/v4/t/lecture/7593710?start=0
-Redirect URIs: https://www.udemy.com/node-with-react-fullstack-web-development/learn/v4/t/lecture/7593722?start=0
-
-1. Go to console.developers.google.com
-2. Create new projects, MAKE SURE YOU'RE IN YOUR NEW project
-3. Enable Google oAuth API
-  a. Click "+Enable API"
-  b. Search "google+"
-  c. Enable Google+ API
-4. Once in new project go to Credentials in sidebar
-5. Click "Create Credentials" --> oAuth client ID,
-6. Configure Consent Screen
-  a. add product name - only thing required
-7. Parameters:
-    Application Type: Web Application
-      -use name given
-      -Restrictions:
-        Authorized Javascript Origins: http://localhost:PORT
-        Authorized Redirect URIs: http://localhost:PORT/* and http://localhost:5000/auth/google/callback
-8. module.export googleClientID and googleClientSecret from ./config/keys.js
