@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const rp = require('request-promise');
 const parser = require('xml2json');
 
-const { getBestPlayerNumber } = require('../lib/bbg-api-parse');
+const { getBestPlayerNumber, roundRating } = require('../lib/bbg-api-parse');
+const { shouldUpdateGame } = require('../lib/game-utils');
 
 const User = mongoose.model('users'); // Dont import models, access them like this via mongoose
 const Game = mongoose.model('games');
@@ -26,14 +27,15 @@ module.exports = app => {
 					Game.findOne({ _id: bbgGame.gameId })
 						.then(dbGame => {
 							if (!dbGame) {
-								const { gameId, name, image, maxPlayers, minPlayers, averageRating } = bbgGame
+								const { gameId, name, image, maxPlayers, minPlayers, averageRating } = bbgGame;
+								const rating = roundRating(averageRating);
 								const game = {
 									_id: gameId,
 									name,
 									image,
 									maxPlayers,
 									minPlayers,
-									averageRating,
+									rating,
 								}
 								rp(`https://www.boardgamegeek.com/xmlapi/boardgame/${gameId}?&stats=1`)
 									.then(body => {

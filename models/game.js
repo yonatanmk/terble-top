@@ -9,7 +9,7 @@ const gameSchema = new Schema({
   maxPlayers: Number,
   minPlayers: Number,
   bestPlayers: Number,
-  averageRating: Number,
+  rating: Number,
 });
 
 mongoose.model('games', gameSchema);
