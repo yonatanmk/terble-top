@@ -1,2 +1,7 @@
-export const FETCH_USER = 'fetch_user';
-export const FETCH_GAMES = 'fetch_games';
+import { FETCH_GAMES } from './games.js'
+import { FETCH_USER } from './users.js'
+
+export {
+  FETCH_USER,
+  FETCH_GAMES
+}
