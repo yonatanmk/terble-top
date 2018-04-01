@@ -8,3 +8,6 @@ database hosted at mlab.com
 
 ## Running app in development
 npm run dev
+
+## Stack
+React.js / Node.js / Express.js / MongoDB
