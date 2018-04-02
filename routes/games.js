@@ -1,10 +1,13 @@
+const mongoose = require('mongoose');
 const rp = require('request-promise');
 const parser = require('xml2json');
 
 const { getBestPlayerNumber } = require('../lib/bbg-api-parse');
 
+const Game = mongoose.model('games');
+
 module.exports = app => {
-	app.get('/api/games', (req, res) => {
+	app.get('/api/bbg-games', (req, res) => {
 		console.log(`Fetching games from https://bgg-json.azurewebsites.net/collection/${req.user.bbgUsername}`);
 		const options = {
 			uri: `https://bgg-json.azurewebsites.net/collection/${req.user.bbgUsername}`,
@@ -18,6 +21,14 @@ module.exports = app => {
 			.catch(err => {
 				console.log(err);
 			});
+	});
+
+	app.get('/api/games', (req, res) => {
+		const { user } = req;
+
+		Game.find({ _id: { $in : user.games } })
+			.then(games => res.send(games))
+			.catch(err => res.status(500).json(err));
 	});
 
 	app.get('/bbgxml', (req, res) => {

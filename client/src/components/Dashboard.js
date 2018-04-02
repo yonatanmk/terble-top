@@ -43,7 +43,7 @@ class Dashboard extends Component {
 
 		return games.filter(game => this.checkPlayerNumber(game))
 			.map(game => (
-			<Game key={game.gameId} game={game} />
+			<Game key={game._id} game={game} />
 		));
 	}
 

@@ -40,13 +40,6 @@ class App extends Component {
   }
 }
 
-const overlayStyle = {
-  height: "100%",
-  width: "100%",
-  marginHorizontal: "auto",
-  marginVertical: "auto"
-};
-
 const mapStateToProps = ({ isFetching }) => {
   return { isFetching };
 };
