@@ -26,7 +26,7 @@ module.exports = app => {
 	app.get('/api/games', (req, res) => {
 		const { user } = req;
 
-		Game.find({ _id: { $in : user.games } })
+		Game.find({ _id: { $in: user.games } })
 			.then(games => res.send(games))
 			.catch(err => res.status(500).json(err));
 	});

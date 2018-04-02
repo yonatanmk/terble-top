@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import isFetching from './isFetching'
-import { fetchGames } from './games'
+import isFetching from './isFetching';
+import { fetchGames } from './games';
 
 export const FETCH_USER = 'fetch_user';
 

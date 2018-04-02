@@ -15,8 +15,12 @@
     "react/prop-types": "off",
     "consistent-return": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "global-require": "off",
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
-    "react/jsx-boolean-value": "off"
+    "react/jsx-boolean-value": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": "off",
+    "import/no-named-as-default-member": "off"
   }
 }
