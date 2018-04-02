@@ -7,7 +7,7 @@ export const FETCH_USER = 'fetch_user';
 
 export const fetchUser = () => dispatch => {
   dispatch(isFetching.start());
-  axios
+  return axios
     .get('/api/current_user')
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }))
     .then(() => dispatch(fetchGames()))
@@ -16,7 +16,7 @@ export const fetchUser = () => dispatch => {
 
 export const createBBGUsername = bbgUsername => dispatch => {
   dispatch(isFetching.start());
-  axios
+  return axios
     .post('/api/add-bbg-username', { bbgUsername })
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }))
     .then(() => dispatch(fetchGames()))
