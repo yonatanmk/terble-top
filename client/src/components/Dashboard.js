@@ -53,11 +53,11 @@ class Dashboard extends Component {
 	}
 
 	render() {
-		const { user } = this.props;
+		const { user, isFetching } = this.props;
 		return (
 			<div>
 			<Modal
-				isOpen={!user || !user.bbgUsername}
+				isOpen={!isFetching && !!user && !user.bbgUsername}
 				contentLabel="Modal"
 			>
 				<h1>Please enter your BoardGameGeek username</h1>
@@ -85,8 +85,8 @@ class Dashboard extends Component {
 	}
 }
 
-function mapStateToProps({ user, games }) {
-	return { user, games };
+function mapStateToProps({ user, games, isFetching }) {
+	return { user, games, isFetching };
 }
 
 export default connect(mapStateToProps, actions)(Dashboard);

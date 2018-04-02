@@ -1,8 +1,8 @@
-import { fetchGames } from './games'
-import { fetchUser, createBBGUsername } from './users'
+import { fetchGames } from './games';
+import { fetchUser, createBBGUsername } from './users';
 
 export {
   fetchGames,
   fetchUser,
-  createBBGUsername
-}
+  createBBGUsername,
+};
