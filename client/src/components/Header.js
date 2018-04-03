@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
-  renderContent() {
+  get content () {
     switch (this.props.user) {
       case null:
         return;
@@ -30,7 +30,7 @@ class Header extends Component {
             TerbleTop
           </Link>
           <ul className="right">
-            {this.renderContent()}
+            {this.content}
           </ul>
         </div>
       </nav>
