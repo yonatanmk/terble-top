@@ -30,12 +30,11 @@ module.exports = app => {
 								return saveOrUpdateGame(bbgGame);
 							});
 
-						return Promise.all([Promise.resolve(user), promiseActions])
-							.then(_body => {
-								const newUser = _body[0];
-								return newUser.save();
+						return Promise.all(promiseActions)
+							.then(() => {
+								return user.save();
 							})
-							.then(_user => res.send(_user));
+							.then(() => res.send(user))
 					});
 			});
 	});
