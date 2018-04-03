@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
-  get content () {
+  get content() {
     switch (this.props.user) {
       case null:
         return;

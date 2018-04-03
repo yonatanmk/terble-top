@@ -22,25 +22,21 @@ class Dashboard extends Component {
 		}
 	}
 
-	onPlayerNumberChange = playerNumber => {
+	onPlayerNumberChange(playerNumber) {
 		this.setState({ playerNumber });
 	}
 
-	onBBGUsernameChange = bbgUsername => {
+	onBBGUsernameChange(bbgUsername) {
 		this.setState({ bbgUsername });
 	}
 
-	getBestPlayers = gameId => {
-		this.props.getBestPlayers(gameId)
-  }
-
-	onModalSubmit = () => {
+	onModalSubmit() {
 		if (this.state.bbgUsername.length > 0) {
 			this.props.createBBGUsername(this.state.bbgUsername);
 		}
 	}
 
-	get gamesList () {
+	get gamesList() {
 		const { games } = this.props;
 
 		return games.filter(game => this.checkPlayerNumber(game))
@@ -48,11 +44,16 @@ class Dashboard extends Component {
 			<Game
 				key={game._id}
 				game={game}
-				getBestPlayers={() => this.getBestPlayers(game._id)}/>
+				getBestPlayers={() => this.getBestPlayers(game._id)}
+			/>
 		));
 	}
 
-	checkPlayerNumber = (game) => {
+	getBestPlayers(gameId) {
+		this.props.getBestPlayers(gameId);
+	}
+
+	checkPlayerNumber(game) {
 		const { playerNumber } = this.state;
 		return playerNumber === 'all' || (!!Number(playerNumber) && game.minPlayers <= Number(playerNumber) && game.maxPlayers >= Number(playerNumber));
 	}

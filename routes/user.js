@@ -34,7 +34,7 @@ module.exports = app => {
 							.then(() => {
 								return user.save();
 							})
-							.then(() => res.send(user))
+							.then(() => res.send(user));
 					});
 			});
 	});

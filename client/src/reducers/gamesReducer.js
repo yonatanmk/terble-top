@@ -5,10 +5,10 @@ export default function (state = [], action) {
     case FETCH_GAMES:
       return action.payload || [];
     case UPDATE_GAME:
-    const { payload } = action;
-    const gamesArray = state.map(game => {
-      return game._id === payload._id ? payload : game;
-    })
+      const { payload } = action;
+      const gamesArray = state.map(game => {
+        return game._id === payload._id ? payload : game;
+      });
       return payload ? gamesArray : state;
     default:
       return state;
