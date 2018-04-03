@@ -32,6 +32,10 @@ class Dashboard extends Component {
 		this.setState({ bbgUsername });
 	}
 
+	getBestPlayers = gameId => {
+		this.props.getBestPlayers(gameId)
+  }
+
 	onModalSubmit() {
 		if (this.state.bbgUsername.length > 0) {
 			this.props.createBBGUsername(this.state.bbgUsername);
@@ -43,7 +47,10 @@ class Dashboard extends Component {
 
 		return games.filter(game => this.checkPlayerNumber(game))
 			.map(game => (
-			<Game key={game._id} game={game} />
+			<Game
+				key={game._id}
+				game={game}
+				getBestPlayers={() => this.getBestPlayers(game._id)}/>
 		));
 	}
 

@@ -3,6 +3,7 @@ const rp = require('request-promise');
 const parser = require('xml2json');
 
 const { getBestPlayerNumber } = require('../lib/bbg-api-parse');
+const { saveOrUpdateGame } = require('../lib/game-utils');
 
 const Game = mongoose.model('games');
 
@@ -29,6 +30,13 @@ module.exports = app => {
 		Game.find({ _id: { $in: user.games } })
 			.then(games => res.send(games))
 			.catch(err => res.status(500).json(err));
+	});
+
+	app.post('/api/get-best-players', (req, res) => {
+		const { body } = req;
+
+		saveOrUpdateGame(body) // body is { gameId }
+			.then(game => res.send(game));
 	});
 
 	app.get('/bbgxml', (req, res) => {

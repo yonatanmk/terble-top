@@ -4,3 +4,8 @@
   justify-content: center;
   margin-top: 10em;
 }
+
+.get-best-player-button {
+  display: block;
+  margin-bottom: 9px;
+}

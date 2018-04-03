@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const rp = require('request-promise');
 
-const { saveGameFromBBG, ignoreGame } = require('../lib/game-utils');
+const { saveOrUpdateGame, ignoreGame } = require('../lib/game-utils');
 
 const User = mongoose.model('users'); // Dont import models, access them like this via mongoose
 
@@ -27,7 +27,7 @@ module.exports = app => {
 									user.games.push(bbgGame.gameId);
 								}
 
-								return saveGameFromBBG(bbgGame);
+								return saveOrUpdateGame(bbgGame);
 							});
 
 						return Promise.all([Promise.resolve(user), promiseActions])
