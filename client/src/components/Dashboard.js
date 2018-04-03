@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
-import * as actions from '../actions';
 
+import * as actions from '../actions';
 import Game from './Game';
 
 class Dashboard extends Component {
@@ -78,12 +78,16 @@ class Dashboard extends Component {
 				</form>
 			</Modal>
 				<form style={{ marginTop: 10 }}>
-					<input
-						type="text"
-						placeholder="Number of players"
-						value={this.state.playerNumber}
-						onChange={e => this.onPlayerNumberChange(e.target.value)}
-					/>
+					<div className="search-form">
+						<input
+							type="text"
+							className="player-number-search"
+							placeholder="Number of players"
+							value={this.state.playerNumber}
+							onChange={e => this.onPlayerNumberChange(e.target.value)}
+							/>
+						<button className="refresh"><p className="refresh-text">Refresh Games</p></button>
+					</div>
 				</form>
 				{this.gamesList}
 			</div>

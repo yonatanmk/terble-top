@@ -9,3 +9,22 @@
   display: block;
   margin-bottom: 9px;
 }
+
+
+.player-number-search {
+  flex: 11;
+}
+
+.refresh {
+  flex: 1;
+  height: 43px;
+}
+
+.refresh-text {
+  height: 39px;
+  margin-top: 0;
+}
+
+.search-form {
+  display: flex;
+}
