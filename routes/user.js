@@ -6,15 +6,17 @@ const { saveOrUpdateGame, ignoreGame } = require('../lib/game-utils');
 const User = mongoose.model('users'); // Dont import models, access them like this via mongoose
 
 module.exports = app => {
-	app.post('/api/add-bbg-username', (req, res) => {
+	app.post('/api/fetch-games', (req, res) => {
     const { _id } = req.user;
 		const { bbgUsername } = req.body;
 
 		User.findById({ _id })
 			.then(user => {
-				user.bbgUsername = bbgUsername;
+				if (bbgUsername) {
+					user.bbgUsername = bbgUsername;
+				}
 				const options = {
-					uri: `https://bgg-json.azurewebsites.net/collection/${bbgUsername}`,
+					uri: `https://bgg-json.azurewebsites.net/collection/${user.bbgUsername}`,
 					json: true,
 				};
 

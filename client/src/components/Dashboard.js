@@ -36,6 +36,10 @@ class Dashboard extends Component {
 		}
 	}
 
+	onRefreshClick() {
+		this.props.refreshGames();
+	}
+
 	get gamesList() {
 		const { games } = this.props;
 
@@ -86,7 +90,7 @@ class Dashboard extends Component {
 							value={this.state.playerNumber}
 							onChange={e => this.onPlayerNumberChange(e.target.value)}
 							/>
-						<button className="refresh"><p className="refresh-text">Refresh Games</p></button>
+						<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
 					</div>
 				</form>
 				{this.gamesList}

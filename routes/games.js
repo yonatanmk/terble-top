@@ -36,9 +36,11 @@ module.exports = app => {
 		const { body } = req;
 
 		saveOrUpdateGame(body) // body is { gameId }
-			.then(game => res.send(game));
+			.then(game => res.send(game))
+			// .then(game => reject())
+			.catch(err => res.status(500).json("Error getting best player number."));
 	});
-
+	
 	app.get('/bbgxml', (req, res) => {
 		rp('https://www.boardgamegeek.com/xmlapi/boardgame/27225?&stats=1')
 			.then(body => {
