@@ -23,6 +23,8 @@
     "arrow-body-style": "off",
     "import/no-named-as-default-member": "off",
     "import/no-named-as-default": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off"
   }
 }

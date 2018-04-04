@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 
 import * as actions from '../actions';
 import Game from './Game';
+import { sortGames } from '../lib/game-utils';
 
 class Dashboard extends Component {
 	constructor(props) {
@@ -42,15 +43,19 @@ class Dashboard extends Component {
 
 	get gamesList() {
 		const { games } = this.props;
+		const { playerNumber } = this.state;
+		const filteredGames = games.filter(game => this.checkPlayerNumber(game));
+		const sortedGames = sortGames(filteredGames, playerNumber);
 
-		return games.filter(game => this.checkPlayerNumber(game))
+		return sortedGames
 			.map(game => (
-			<Game
-				key={game._id}
-				game={game}
-				getBestPlayers={() => this.getBestPlayers(game._id)}
-			/>
-		));
+				<Game
+					key={game._id}
+					game={game}
+					getBestPlayers={() => this.getBestPlayers(game._id)}
+					isBestPlayers={game.bestPlayers && game.bestPlayers === parseInt(playerNumber, 10)}
+				/>
+			));
 	}
 
 	getBestPlayers(gameId) {
@@ -89,7 +94,7 @@ class Dashboard extends Component {
 							placeholder="Number of players"
 							value={this.state.playerNumber}
 							onChange={e => this.onPlayerNumberChange(e.target.value)}
-							/>
+						/>
 						<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
 					</div>
 				</form>

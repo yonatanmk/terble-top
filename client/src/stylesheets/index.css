@@ -10,7 +10,6 @@
   margin-bottom: 9px;
 }
 
-
 .player-number-search {
   flex: 11;
 }
@@ -27,4 +26,26 @@
 
 .search-form {
   display: flex;
+}
+
+.game-box {
+  border-width: 3pt;
+  border-style: solid;
+  border-radius: 3pt;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.gold {
+  background-color: #F5CB5C;
+  border-color: #B49B57;
+}
+
+.silver {
+  background-color: #D2D4C8;
+  border-color: #9CA29E;
+}
+
+.game-title {
+  margin-top: 0px;
 }

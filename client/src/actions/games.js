@@ -16,7 +16,7 @@ export const getBestPlayers = gameId => dispatch => {
   return axios
     .post('/api/get-best-players', { gameId })
     .then(res => dispatch({ type: UPDATE_GAME, payload: res.data }))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 };
 
 export const refreshGames = () => dispatch => {
