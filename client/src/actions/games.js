@@ -20,10 +20,10 @@ export const getBestPlayers = gameId => dispatch => {
 };
 
 export const refreshGames = () => dispatch => {
-  dispatch(isFetching.start());
+  isFetching.start(dispatch);
   return axios
     .post('/api/fetch-games')
     .then(res => dispatch({ type: FETCH_USER, payload: res.data }))
     .then(() => dispatch(fetchGames()))
-    .finally(() => dispatch(isFetching.stop()));
+    .finally(() => isFetching.stop(dispatch));
 };
