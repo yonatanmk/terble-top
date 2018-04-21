@@ -9,8 +9,15 @@ export const fetchUser = () => dispatch => {
   dispatch(isFetching.start());
   return axios
     .get('/api/current_user')
-    .then(res => dispatch({ type: FETCH_USER, payload: res.data }))
-    .then(() => dispatch(fetchGames()))
+    .then(res => {
+      dispatch({ type: FETCH_USER, payload: res.data })
+      return res.data;
+    })
+    .then(user => {
+      if (user) {
+        dispatch(fetchGames())
+      }
+    })
     .finally(() => dispatch(isFetching.stop()));
 };
 
