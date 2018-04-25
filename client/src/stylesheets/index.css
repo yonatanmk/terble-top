@@ -1,3 +1,38 @@
+
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #EC6F75;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.header .nav-item {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header .logo {
+  font-size: 40px;
+}
+
+.nav-right {
+  float: right;
+}
+
 .loading-container {
   display: flex;
   height: 100vh;

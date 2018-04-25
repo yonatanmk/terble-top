@@ -9,15 +9,11 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li>
-            <a href="/auth/google">Login With Google</a>
-          </li>
+          <a href="/auth/google" className="nav-item">Login With Google</a>
         );
       default:
         return (
-          <li>
-            <a href="/api/logout">Logout</a>
-          </li>
+          <a href="/api/logout" className="nav-item">Logout</a>
         );
     }
   }
@@ -25,13 +21,13 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
-          <Link to={this.props.user ? '/surveys' : '/'} className="left brand-logo" style={{ marginLeft: 10 }}>
+        <div className="header">
+          <Link to={this.props.user ? '/games' : '/'} className="left brand-logo" className="nav-item logo">
             TerbleTop
           </Link>
-          <ul className="right">
+          <div className="nav-right">
             {this.content}
-          </ul>
+          </div>
         </div>
       </nav>
     );
