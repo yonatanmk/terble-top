@@ -70,32 +70,32 @@ class Dashboard extends Component {
 	render() {
 		const { user, isFetching } = this.props;
 		return (
-			<div>
-			<Modal
-				isOpen={!isFetching && !!user && !user.bbgUsername}
-				contentLabel="Modal"
-			>
-				<h1>Please enter your BoardGameGeek username</h1>
-				<form style={{ marginTop: 10 }}>
-					<input
-						type="text"
-						placeholder="Username"
-						value={this.state.bbgUsername}
-						onChange={e => this.onBBGUsernameChange(e.target.value)}
-					/>
-					<button value="Submit" onClick={() => this.onModalSubmit()}>Submit</button>
-				</form>
-			</Modal>
-				<form style={{ marginTop: 10 }}>
-					<div className="search-form">
+			<div className="dashboard">
+				<Modal
+					isOpen={!isFetching && !!user && !user.bbgUsername}
+					contentLabel="Modal"
+				>
+					<h1>Please enter your BoardGameGeek username</h1>
+					<form style={{ marginTop: 10 }}>
+						<input
+							type="text"
+							placeholder="Username"
+							value={this.state.bbgUsername}
+							onChange={e => this.onBBGUsernameChange(e.target.value)}
+						/>
+						<button value="Submit" onClick={() => this.onModalSubmit()}>Submit</button>
+					</form>
+				</Modal>
+				<form style={{ marginTop: 10 }} className="game-box silver search-form">
+					<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
+					<div className="player-num-search-container">
 						<input
 							type="text"
 							className="player-number-search"
 							placeholder="Number of players"
 							value={this.state.playerNumber}
 							onChange={e => this.onPlayerNumberChange(e.target.value)}
-						/>
-						<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
+							/>
 					</div>
 				</form>
 				{this.gamesList}
