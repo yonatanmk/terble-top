@@ -45,22 +45,31 @@ body {
   margin: auto;
 }
 
+.modal {
+  background-color: pink;
+}
+
+.modal-submit {
+  float: right;
+}
+
 .get-best-player-button {
   display: block;
   margin-bottom: 9px;
 }
 
-.player-num-search-container {
+.input-container {
   overflow: hidden;
   padding-right: .5em;
 }
 
-.player-number-search {
+.input {
   width: 100%;
 }
 
 .refresh {
   float: right;
+  margin-top: 2px;
 }
 
 .refresh-text {

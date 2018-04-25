@@ -74,24 +74,28 @@ class Dashboard extends Component {
 				<Modal
 					isOpen={!isFetching && !!user && !user.bbgUsername}
 					contentLabel="Modal"
+					style={modalStyles}
 				>
 					<h1>Please enter your BoardGameGeek username</h1>
 					<form style={{ marginTop: 10 }}>
-						<input
-							type="text"
-							placeholder="Username"
-							value={this.state.bbgUsername}
-							onChange={e => this.onBBGUsernameChange(e.target.value)}
-						/>
-						<button value="Submit" onClick={() => this.onModalSubmit()}>Submit</button>
+						<button className="modal-submit" value="Submit" onClick={() => this.onModalSubmit()}>Submit</button>
+						<div className="input-container">
+							<input
+								type="text"
+								className="input"
+								placeholder="Username"
+								value={this.state.bbgUsername}
+								onChange={e => this.onBBGUsernameChange(e.target.value)}
+								/>
+						</div>
 					</form>
 				</Modal>
 				<form style={{ marginTop: 10 }} className="game-box silver search-form">
 					<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
-					<div className="player-num-search-container">
+					<div className="input-container">
 						<input
 							type="text"
-							className="player-number-search"
+							className="input"
 							placeholder="Number of players"
 							value={this.state.playerNumber}
 							onChange={e => this.onPlayerNumberChange(e.target.value)}
@@ -101,6 +105,17 @@ class Dashboard extends Component {
 				{this.gamesList}
 			</div>
 		);
+	}
+}
+
+const modalStyles = {
+	content: {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
 	}
 }
 
