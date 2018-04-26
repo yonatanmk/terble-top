@@ -9,7 +9,7 @@ database hosted at mlab.com
 ## Running app in development
 npm run dev
 
-If you are just looking and do not have a boardgamegeek account, feel free to user the username diedphysic
+If you are just looking and do not have a boardgamegeek account, feel free to use the username diedphysic to use the web app.
 
 ## Stack
 React.js / Node.js / Express.js / MongoDB
