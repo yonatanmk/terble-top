@@ -41,7 +41,7 @@ body {
 }
 
 .dashboard {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -78,15 +78,35 @@ body {
 
 .search-form {
   text-align: left;
-}
-
-.game-box {
   border-width: 3pt;
   border-style: solid;
   border-radius: 3pt;
   margin-bottom: 5px;
   padding: 20px;
   text-align: center;
+}
+
+.games-container {
+  display: flex;
+  flex-wrap: wrap;
+  /*flex-flow: row wrap;*/
+  /*justify-content: space-between;*/
+}
+
+/*games-container:after {
+  content: "";
+  flex: auto;
+}*/
+
+.game-box {
+  box-sizing: border-box;
+  border-width: 3pt;
+  border-style: solid;
+  border-radius: 3pt;
+  margin-bottom: 5px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .gold {
@@ -101,4 +121,18 @@ body {
 
 .game-title {
   margin-top: 0px;
+}
+
+@media only screen and (min-width: 700px) {
+  .game-box {
+    width: 49%;
+    margin-left: 0.5%;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .game-box {
+    width: 32%;
+    margin-left: 1%;
+  }
 }

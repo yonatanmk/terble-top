@@ -90,7 +90,7 @@ class Dashboard extends Component {
 						</div>
 					</form>
 				</Modal>
-				<form style={{ marginTop: 10 }} className="game-box silver search-form">
+				<form style={{ marginTop: 10 }} className="search-form silver">
 					<button className="refresh" onClick={() => this.onRefreshClick()}><p className="refresh-text">Refresh Games</p></button>
 					<div className="input-container">
 						<input
@@ -102,7 +102,9 @@ class Dashboard extends Component {
 							/>
 					</div>
 				</form>
-				{this.gamesList}
+				<div className="games-container">
+					{this.gamesList}
+				</div>
 			</div>
 		);
 	}
